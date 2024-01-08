@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">mymusicapp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="singup">Singup</string>
+    <string name="text_parson_name">Text Parson Name</string>
+    <string name="sing_up">Sing Up</string>
+    <string name="email_id">Email id</string>
+    <string name="password">Password</string>
+    <string name="conform_password">Conform Password</string>
+    <string name="already_have_an_account">Already have an account</string>
+    <string name="alreadyhaveanaccount">alreadyhaveanaccount?</string>
+    <string name="Already_have_an_account">already have an account</string>
+    <string name="singin">Singin</string>
+    <string name="login">Login</string>
+    <string name="registar">Registar</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="don_t_worry_we_just_need_your_registered_email_address_and_it_s_done">don\'t worry we just need your registered email address and it\'s done!</string>
+    <string name="go_back">Go back</string>
+    <string name="done" />
+</resources>
