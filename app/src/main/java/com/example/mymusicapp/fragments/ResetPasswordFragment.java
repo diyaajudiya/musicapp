@@ -49,6 +49,7 @@ public class ResetPasswordFragment extends Fragment {
     private void setFragment(Fragment fragment) {
 
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.from_left,R.anim.out_from_right);
         fragmentTransaction.replace(frameLayout.getId(), fragment);
         fragmentTransaction.commit();
 

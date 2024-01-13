@@ -13,7 +13,7 @@
         android:layout_height="224dp"
         android:layout_marginBottom="28dp"
         android:src="@drawable/listen1"
-        app:layout_constraintBottom_toTopOf="@+id/textview1"
+        app:layout_constraintBottom_toTopOf="@+id/email2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
@@ -36,7 +36,7 @@
         tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/textview1"
+        android:id="@+id/email2"
         android:layout_width="348dp"
         android:layout_height="51dp"
         android:layout_marginStart="24dp"
@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text" />
 
     <EditText
-        android:id="@+id/textview2"
+        android:id="@+id/password2"
         android:layout_width="348dp"
         android:layout_height="51dp"
         android:layout_marginStart="24dp"
@@ -69,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview1" />
+        app:layout_constraintTop_toBottomOf="@+id/email2" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -107,7 +107,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/Button"
+        android:id="@+id/Buttonsingup"
         android:layout_width="342dp"
         android:layout_height="49dp"
         android:background="@drawable/gradiantbackground"
@@ -121,7 +121,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview2"
+        app:layout_constraintTop_toBottomOf="@+id/password2"
         app:layout_constraintVertical_bias="0.592"
         tools:ignore="MissingConstraints" />
 
@@ -137,7 +137,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.172"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview2"
+        app:layout_constraintTop_toBottomOf="@+id/password2"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

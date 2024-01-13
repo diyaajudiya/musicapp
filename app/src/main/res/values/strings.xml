@@ -6,7 +6,7 @@
     <string name="text_parson_name">Text Parson Name</string>
     <string name="sing_up">Sing Up</string>
     <string name="email_id">Email id</string>
-    <string name="password">Password</string>
+    <string name="password">Password ( At least 6 characters )</string>
     <string name="conform_password">Conform Password</string>
     <string name="already_have_an_account">Already have an account</string>
     <string name="alreadyhaveanaccount">alreadyhaveanaccount?</string>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "993585250038",
+    "project_id": "music-46944",
+    "storage_bucket": "music-46944.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993585250038:android:7f6087339d9cb1609af6d7",
+        "android_client_info": {
+          "package_name": "com.example.mymusicapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtrQoHOxBdQcHUyKdph7XPGkoC638VQG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
