@@ -42,7 +42,6 @@ public class SignUpFragment extends Fragment {
     private FirebaseAuth mAuth;
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -61,8 +60,6 @@ public class SignUpFragment extends Fragment {
     }
 
 
-
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -77,31 +74,26 @@ public class SignUpFragment extends Fragment {
         username.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 checkInputs();
-
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-
             }
         });
 
         email2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 checkInputs();
-
             }
 
             @Override
@@ -113,31 +105,26 @@ public class SignUpFragment extends Fragment {
         password2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 checkInputs();
-
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-
             }
         });
 
         conformpassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 checkInputs();
-
             }
 
             @Override
@@ -173,7 +160,6 @@ public class SignUpFragment extends Fragment {
                                     Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                     buttonsingup.setEnabled(false);
                                     buttonsingup.setTextColor(getResources().getColor(R.color.taranswhite));
-
                                 }
                             }
                         });

@@ -58,9 +58,12 @@ public class SignInFragment extends Fragment {
             public void onClick(View view) {
                 setFragment(new SignUpFragment());
 
+
             }
         });
 
+
+   
         resetpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,6 +94,9 @@ public class SignInFragment extends Fragment {
         fragmentTransaction.setCustomAnimations(R.anim.from_right,R.anim.out_from_left);
         fragmentTransaction.replace(frameLayout.getId(),fragment);
         fragmentTransaction.commit();
+
+
+
 
     }
 

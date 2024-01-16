@@ -9,12 +9,14 @@
 
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="258dp"
         android:layout_height="224dp"
         android:layout_marginBottom="28dp"
         android:src="@drawable/listen1"
         app:layout_constraintBottom_toTopOf="@+id/email2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -36,11 +38,11 @@
         tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/email2"
+        android:id="@+id/Email"
         android:layout_width="348dp"
         android:layout_height="51dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="136dp"
         android:background="@drawable/edittext_background"
         android:ems="10"
         android:hint="@string/email_id"
@@ -54,11 +56,12 @@
         app:layout_constraintTop_toBottomOf="@+id/text" />
 
     <EditText
-        android:id="@+id/password2"
+        android:id="@+id/Password"
         android:layout_width="348dp"
         android:layout_height="51dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="44dp"
+        android:layout_marginBottom="440dp"
         android:background="@drawable/edittext_background"
         android:ems="10"
         android:hint="@string/password"
@@ -66,6 +69,7 @@
         android:padding="15dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,16 +114,17 @@
         android:id="@+id/Buttonsingup"
         android:layout_width="342dp"
         android:layout_height="49dp"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/gradiantbackground"
+        android:onClick="singin"
         android:text="@string/singin"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:backgroundTint="@null"
-        android:onClick="singin"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password2"
         app:layout_constraintVertical_bias="0.592"
@@ -130,12 +135,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="172dp"
         android:text="@string/reset_password"
         android:textColor="@color/tital"
         android:textSize="19sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Buttonsingup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password2"
         tools:ignore="MissingConstraints" />
