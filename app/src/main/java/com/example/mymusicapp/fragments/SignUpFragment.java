@@ -1,14 +1,7 @@
 package com.example.mymusicapp.fragments;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -20,18 +13,22 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.example.mymusicapp.MainActivity;
 import com.example.mymusicapp.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Objects;
 
 
 public class SignUpFragment extends Fragment {
 
     private TextView already_have_account;
+
     private FrameLayout frameLayout;
 
     private EditText username;
@@ -39,6 +36,8 @@ public class SignUpFragment extends Fragment {
     private EditText password2;
     private EditText conformpassword;
     private Button buttonsingup;
+
+
     private FirebaseAuth mAuth;
 
 
@@ -47,7 +46,7 @@ public class SignUpFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sign_up, container, false);
         already_have_account = view.findViewById(R.id.singintext);
-        frameLayout = getActivity().findViewById(R.id.registar_frame_layout);
+        frameLayout = requireActivity().findViewById(R.id.registar_frame_layout);
 
         username = view.findViewById(R.id.username);
         email2 = view.findViewById(R.id.email2);
@@ -64,12 +63,7 @@ public class SignUpFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        already_have_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setFragment( new SignInFragment());
-            }
-        });
+        already_have_account.setOnClickListener(view12 -> setFragment( new SignInFragment()));
 
         username.addTextChangedListener(new TextWatcher() {
             @Override
@@ -84,6 +78,7 @@ public class SignUpFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable editable) {
             }
+
         });
 
         email2.addTextChangedListener(new TextWatcher() {
@@ -126,41 +121,32 @@ public class SignUpFragment extends Fragment {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 checkInputs();
             }
-
             @Override
             public void afterTextChanged(Editable editable) {
-
             }
         });
-
-        buttonsingup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                singupWithFirebace();
-                buttonsingup.setEnabled(false);
-                buttonsingup.setTextColor(getResources().getColor(R.color.taranswhite));
-            }
+        buttonsingup.setOnClickListener(view1 -> {
+            singupWithFirebace();
+            buttonsingup.setEnabled(false);
+            buttonsingup.setTextColor(getResources().getColor(R.color.taranswhite));
         });
     }
 
     private void singupWithFirebace() {
-        if (email2.getText().toString().matches("[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+")){
+        if (email2.getText().toString().matches(getString(R.string.a_za_z0_9_a_z_a_z))){
             if (password2.getText().toString().equals(conformpassword.getText().toString())){
 
                 mAuth.createUserWithEmailAndPassword(email2.getText().toString(),password2.getText().toString())
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()){
-                                    Intent intent = new Intent(getActivity() , MainActivity.class);
-                                    getActivity().startActivity(intent);
-                                    getActivity().finish();
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful()){
+                                Intent intent = new Intent(getActivity() , MainActivity.class);
+                                requireActivity().startActivity(intent);
+                                requireActivity().finish();
 
-                                }else {
-                                    Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                    buttonsingup.setEnabled(false);
-                                    buttonsingup.setTextColor(getResources().getColor(R.color.taranswhite));
-                                }
+                            }else {
+                                Toast.makeText(getContext(), Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                                buttonsingup.setEnabled(false);
+                                buttonsingup.setTextColor(getResources().getColor(R.color.taranswhite));
                             }
                         });
 
@@ -168,26 +154,21 @@ public class SignUpFragment extends Fragment {
                 conformpassword.setError("password doesn't match.");
                 buttonsingup.setEnabled(false);
                 buttonsingup.setTextColor(getResources().getColor(R.color.taranswhite));
-
             }
         }else {
             email2.setError("Invalid Email pattern!");
             buttonsingup.setEnabled(false);
             buttonsingup.setTextColor(getResources().getColor(R.color.taranswhite));
-
         }
     }
-
     private void setFragment(Fragment fragment) {
 
-        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        FragmentTransaction fragmentTransaction = requireActivity().getSupportFragmentManager().beginTransaction();
         fragmentTransaction.setCustomAnimations(R.anim.from_left,R.anim.out_from_right);
         fragmentTransaction.replace(frameLayout.getId(), fragment);
         fragmentTransaction.commit();
 
-
     }
-
     private void checkInputs(){
         if (username.getText().toString().isEmpty()){
            if (!email2.getText().toString().isEmpty()){
@@ -199,22 +180,18 @@ public class SignUpFragment extends Fragment {
                    }else {
                        buttonsingup.setEnabled(false);
                        buttonsingup.setTextColor(getResources().getColor(R.color.taranswhite));
-
                    }
                }else {
                    buttonsingup.setEnabled(false);
                    buttonsingup.setTextColor(getResources().getColor(R.color.taranswhite));
-
                }
            }else {
                buttonsingup.setEnabled(false);
                buttonsingup.setTextColor(getResources().getColor(R.color.taranswhite));
-
            }
         }else {
             buttonsingup.setEnabled(false);
             buttonsingup.setTextColor(getResources().getColor(R.color.taranswhite));
-
         }
 
     }

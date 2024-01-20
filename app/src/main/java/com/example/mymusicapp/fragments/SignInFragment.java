@@ -30,6 +30,7 @@ public class SignInFragment extends Fragment {
     private FrameLayout frameLayout;
 
 
+
     @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,7 +43,7 @@ public class SignInFragment extends Fragment {
         password = view.findViewById(R.id.password2);
 
 
-        frameLayout = getActivity().findViewById(R.id.registar_frame_layout);
+        frameLayout = requireActivity().findViewById(R.id.registar_frame_layout);
         return view;
     }
 
@@ -53,44 +54,25 @@ public class SignInFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Donthaveanaccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setFragment(new SignUpFragment());
-
-
-            }
-        });
+        Donthaveanaccount.setOnClickListener(view12 -> setFragment(new SignUpFragment()));
 
 
    
-        resetpassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               setFragment(new ResetPasswordFragment());
-            }
-        });
+        resetpassword.setOnClickListener(view1 -> setFragment(new ResetPasswordFragment()));
 
-        Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String textview1,textview2;
-                textview1 = String.valueOf(email.getText());
-                textview2 = String.valueOf(password.getText());
+        Button.setOnClickListener(view13 -> {
+            String textview1;
+            textview1 = String.valueOf(email.getText());
 
-                if (TextUtils.isEmpty(textview1))
-                {
-                    return;
-                }
+            TextUtils.isEmpty(textview1);
 
-            }
         });
 
 
     }
     private void setFragment(Fragment fragment) {
 
-        FragmentTransaction fragmentTransaction =  getActivity() . getSupportFragmentManager().beginTransaction();
+        FragmentTransaction fragmentTransaction =  requireActivity(). getSupportFragmentManager().beginTransaction();
         fragmentTransaction.setCustomAnimations(R.anim.from_right,R.anim.out_from_left);
         fragmentTransaction.replace(frameLayout.getId(),fragment);
         fragmentTransaction.commit();

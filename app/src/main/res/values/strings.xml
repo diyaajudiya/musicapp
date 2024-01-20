@@ -19,4 +19,5 @@
     <string name="don_t_worry_we_just_need_your_registered_email_address_and_it_s_done">don\'t worry we just need your registered email address and it\'s done!</string>
     <string name="go_back">Go back</string>
     <string name="done" />
+    <string name="a_za_z0_9_a_z_a_z">[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+</string>
 </resources>
