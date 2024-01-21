@@ -28,8 +28,8 @@
         android:fontFamily="@font/m"
         android:text="Sing in"
         android:textAlignment="center"
-        android:textSize="50sp"
         android:textColor="@color/tital"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.38"
@@ -82,7 +82,6 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.354"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
@@ -115,19 +114,20 @@
         android:layout_width="342dp"
         android:layout_height="49dp"
         android:layout_marginBottom="104dp"
-        android:background="@drawable/gradiantbackground"
+        android:enabled="false"
+        android:background="@drawable/gradiant_button_background"
         android:onClick="singin"
         android:text="@string/singin"
-        android:textColor="@color/white"
+        android:textColor="@color/taranswhite"
         android:textSize="18sp"
         android:textStyle="bold"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password2"
-        app:layout_constraintVertical_bias="0.592"
+        app:layout_constraintTop_toBottomOf="@+id/Email"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -144,8 +144,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password2"
+
         tools:ignore="MissingConstraints" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="75dp"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        android:indeterminateTint="@color/startcolor"
+        app:layout_constraintBottom_toTopOf="@+id/Buttonsingup"
+        app:layout_constraintEnd_toEndOf="@+id/Password"
+        app:layout_constraintStart_toStartOf="@+id/Password"
+        app:layout_constraintTop_toBottomOf="@+id/Password"
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
